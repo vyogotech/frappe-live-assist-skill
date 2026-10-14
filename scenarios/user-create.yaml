@@ -1,0 +1,22 @@
+skill: user-create
+title: Create User With Role and Welcome Email
+user_prompt: "Create a user for Jordan Lee with email jordan@team.example.org and assign the Support Team role."
+
+expected_tools:
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: User
+    email: jordan@team.example.org
+    first_name: Jordan
+    last_name: Lee
+    send_welcome_email: 1
+    enabled: 1
+
+forbidden_actions:
+  - Asking the user for a password
+  - Setting a password field directly
+  - Omitting send_welcome_email
+  - Creating the user without checking if email exists
+  - Auto-approving the creation without confirmation

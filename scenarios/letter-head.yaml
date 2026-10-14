@@ -1,0 +1,19 @@
+skill: letter-head
+title: Create Default Letter Head for Acme Industrial
+user_prompt: "Create an HTML Letter Head named Acme Standard for Acme Industrial with their address and set it as the default."
+
+expected_tools:
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: Letter Head
+    letter_head_name: Acme Standard
+    source: HTML
+    is_default: 1
+
+forbidden_actions:
+  - Inventing random image URLs not provided by user
+  - Setting multiple conflicting default letter heads without notice
+  - Creating duplicate letter head names without checking list_documents
+  - Omitting HTML content for header

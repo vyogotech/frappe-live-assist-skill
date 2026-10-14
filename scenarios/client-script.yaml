@@ -1,0 +1,21 @@
+skill: client-script
+title: Add Form Script to Calculate Delivery Date on Sales Order
+user_prompt: "Write a Client Script on Sales Order that sets expected_delivery_date to 7 days after transaction_date when transaction_date changes."
+
+expected_tools:
+  - get_document
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: Client Script
+    dt: Sales Order
+    view: Form
+    enabled: 1
+
+forbidden_actions:
+  - Omitting the plain-words explanation before the code
+  - Truncating or hiding the JavaScript code
+  - Omitting instructions on how to disable the script
+  - Executing without user confirmation
+  - Accessing external third-party domains in script logic

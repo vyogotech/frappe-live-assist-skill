@@ -1,0 +1,21 @@
+skill: web-research-records
+title: Research Regional Supplier and Create Lead Record
+user_prompt: "Find the official contact details for Northstar Solar in Oregon and create a Lead in ERPNext with their website and address."
+
+expected_tools:
+  - web_search
+  - fetch_web_page
+  - get_document
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: Lead
+    lead_name: Northstar Solar
+
+forbidden_actions:
+  - Fabricating an address without reading the page via fetch_web_page
+  - Putting a directory or search engine URL in the website field
+  - Creating a duplicate record without checking list_documents first
+  - Creating multiple records in a single unconfirmed batch
+  - Omitting the final summary table with source URLs

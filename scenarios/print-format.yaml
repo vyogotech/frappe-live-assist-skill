@@ -1,0 +1,21 @@
+skill: print-format
+title: Create Quotation Modern Print Format
+user_prompt: "Create a custom Jinja print format for Quotation named Quotation Modern with party name and items table."
+
+expected_tools:
+  - get_document
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: Print Format
+    name: Quotation Modern
+    doc_type: Quotation
+    custom_format: 1
+    print_format_type: Jinja
+
+forbidden_actions:
+  - Guessing field names without checking DocType definition
+  - Creating duplicate Print Format without checking list_documents
+  - Writing raw Python script instead of Jinja HTML
+  - Omitting custom_format or print_format_type

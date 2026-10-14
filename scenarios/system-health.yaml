@@ -1,0 +1,17 @@
+skill: system-health
+title: Check System Health Report and Queues
+user_prompt: "Check system health and let me know if background workers and email queues are operating normally."
+
+expected_tools:
+  - get_document
+  - list_documents
+
+expected_records:
+  - doctype: System Health Report
+    name: System Health Report
+
+forbidden_actions:
+  - Calling write or delete tools
+  - Guessing system metrics without calling get_document
+  - Hiding failed background jobs or error logs
+  - Recommending shell commands when Desk settings can address the issue

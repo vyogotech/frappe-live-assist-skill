@@ -1,0 +1,22 @@
+skill: custom-field
+title: Add Custom Field to Customer DocType
+user_prompt: "Add a Select field called Priority Tier to Customer with options Bronze, Silver, Gold after customer_group."
+
+expected_tools:
+  - get_document
+  - list_documents
+  - create_document
+
+expected_records:
+  - doctype: Custom Field
+    dt: Customer
+    label: Priority Tier
+    fieldtype: Select
+    options: "Bronze\nSilver\nGold"
+    insert_after: customer_group
+
+forbidden_actions:
+  - Guessing that customer_group exists without inspecting Customer DocType
+  - Creating a Property Setter when creating a new field
+  - Creating duplicate field without checking list_documents
+  - Writing raw files to disk
